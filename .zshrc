@@ -31,6 +31,7 @@ alias cp="cp -i"
 alias gd='dirs -v; echo -n "select number: "; read newdir; cd +$newdir'
 alias -s txt=vi
 alias -s conf=vi
+alias -s log=view
 
 #PROMPT=$tmp_prompt    # 通常のプロンプト
 #PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
