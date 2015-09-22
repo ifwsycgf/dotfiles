@@ -8,23 +8,29 @@ setopt no_beep
 setopt auto_cd
 setopt auto_menu
 setopt auto_list
-setopt auto_pushd
 setopt correct
 setopt list_packed
 setopt list_types
 setopt nolistbeep
+setopt auto_pushd
 setopt pushd_ignore_dups
 setopt nobeep
 setopt multios
 #setopt no_check_jobs
 
-autoload -U compinit; compinit 
+autoload -U compinit; compinit
 
 zstyle ':completion:*' list-colors ''
 
 alias ls="ls -GFA"
+alias rm="rm -i"
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi=vim
+alias ll="ls -l"
+alias cp="cp -i"
+alias gd='dirs -v; echo -n "select number: "; read newdir; cd +$newdir'
+alias -s txt=vi
+alias -s conf=vi
 
 #PROMPT=$tmp_prompt    # 通常のプロンプト
 #PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)

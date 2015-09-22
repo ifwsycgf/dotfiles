@@ -3,13 +3,13 @@
 "--------------------
 "新しい行のインデントを現在行と同じにする
 set autoindent
- 
+
 "バックアップファイルのディレクトリを指定する
 set backupdir=/Users/ryohmori/.vim/vimbackup
- 
-"クリップボードをWindowsと連携する
+
+"クリップボードをOSと連携する
  set clipboard=unnamed,autoselect
-  
+
 "vi互換をオフする
 set nocompatible
 
@@ -48,6 +48,7 @@ set nrformats=
 "-----ここから下は大森設定-----
 set ic
 set visualbell
+set imdisable
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
@@ -169,4 +170,3 @@ hi link EasyMotionShade  Comment
 
 "------------------------------------
 "vim: foldmethod=marker
-

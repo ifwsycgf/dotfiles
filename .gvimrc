@@ -17,5 +17,5 @@ set lines=48
 syntax enable
 "set background=dark
 set background=light
-""colorscheme solarized
+"colorscheme solarized
 colorscheme desert
