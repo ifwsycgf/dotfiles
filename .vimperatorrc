@@ -1,0 +1,35 @@
+"3.9 (created: 2015/02/15 15:49:05)
+
+source! /Users/ryohmori/.vimperatorrc.local
+
+" vim: set ft=vimperator:
+
+:set editor='/Applications/MacVim.app/Contents/MacOS/mvim -f'
+
+noremap j 8<C-e>
+noremap k 8<C-y>
+
+" ページロード時にテキストボックスにフォーカスするのを防ぐ
+set focuscontent
+
+"フォーカスの文字を変更する
+set hintchars=abcdefghijklmnopqrstuvwxyz
+
+hi Hint z-index:5000; font-family:Menlo; font-size:15px; color:white; background-color:red; border-color:ButtonShadow; border-width:0px; border-style:solid; padding:0px 2px 0px 2px; position:absolute;
+
+:style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+
+"特定のサイトでキーバインドを無効にする(タブ切替のみ有効にしておく)
+ignorekeys clear
+" toodledo
+ignorekeys add https?://www.toodledo.com/ -except=<C-n>,<C-p>,<C-e>,<C-y>
+" googleカレンダー
+ignorekeys add https?://www.google.com/calendar/ -except=<C-n>,<C-p>
+" Gmail
+ignorekeys add https?://mail.google.com/mail/ -except=<C-n>,<C-p>
+" feedly
+ignorekeys add https?://feedly.com/ -except=<C-n>,<C-p>
+" todoist
+ignorekeys add https?://ja.todoist.com/ -except=<C-n>,<C-p>
+
+set editor="C:\tools\gvim\vim74-kaoriya-win32-20150301\vim74-kaoriya-win32\gvim.exe -f"
