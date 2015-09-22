@@ -5,16 +5,16 @@
 set autoindent
 
 "バックアップファイルのディレクトリを指定する
-set backupdir=/Users/ryohmori/.vim/vimbackup
+set backupdir=$HOME/.vim/vimbackup/
 
 "クリップボードをOSと連携する
- set clipboard=unnamed,autoselect
+set clipboard=unnamed,autoselect
 
 "vi互換をオフする
 set nocompatible
 
 "スワップファイル用のディレクトリを指定する
-set directory=$HOME/vimbackup
+set directory=$HOME/.vim/vimbackup/
 
 "タブの代わりに空白文字を指定する
 set expandtab
