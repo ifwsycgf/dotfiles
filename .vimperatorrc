@@ -31,5 +31,8 @@ ignorekeys add https?://mail.google.com/mail/ -except=<C-n>,<C-p>
 ignorekeys add https?://feedly.com/ -except=<C-n>,<C-p>
 " todoist
 ignorekeys add https?://ja.todoist.com/ -except=<C-n>,<C-p>
+" Gmail (inbox)
+https://inbox.google.com/ -except=<C-n>,<C-p>
+
 
 set editor="C:\tools\gvim\vim74-kaoriya-win32-20150301\vim74-kaoriya-win32\gvim.exe -f"
