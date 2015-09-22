@@ -8,7 +8,7 @@ set autoindent
 set backupdir=/Users/ryohmori/.vim/vimbackup
  
 "クリップボードをWindowsと連携する
- set clipboard=unnamed
+ set clipboard=unnamed,autoselect
   
 "vi互換をオフする
 set nocompatible
@@ -46,7 +46,6 @@ set nrformats=
 
 
 "-----ここから下は大森設定-----
-set nu
 set ic
 set visualbell
 
