@@ -533,6 +533,8 @@ set smarttab
 set nrformats=
 " ノーマルモードに抜けるときに日本語入力を解除
 set imdisable
+" クリップボードをOSと連携する
+set clipboard=unnamed,autoselect
 
 " 検索結果のハイライトをEsc連打でクリアする
 nnoremap <ESC><ESC> :nohlsearch<CR>

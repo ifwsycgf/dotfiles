@@ -29,6 +29,7 @@ alias vi=vim
 alias ll="ls -l"
 alias cp="cp -i"
 alias gd='dirs -v; echo -n "select number: "; read newdir; cd +$newdir'
+alias date+="date +"%Y%m%d_%I-%M-%S""
 alias -s txt=vim
 alias -s conf=vim
 alias -s log=view
