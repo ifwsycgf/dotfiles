@@ -22,13 +22,13 @@ if !filereadable(neobundle_readme)
   let g:not_finsh_neobundle = "yes"
 
   " Run shell script if exist on custom select language
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
 endif
 
 " Required:
@@ -162,9 +162,11 @@ set ttyfast
 "set nobackup
 "set noswapfile
 "バックアップファイルのディレクトリを指定する
-set backupdir=$HOME/.vim/vimbackup/
+set backupdir=$HOME/.vim/vimbackup
 "スワップファイル用のディレクトリを指定する
-set directory=$HOME/.vim/vimbackup/
+set directory=$HOME/.vim/vimbackup
+"undoファイル用のディレクトリを指定する
+set undodir=$HOME/.vim/vimbackup
 
 set fileformats=unix,dos,mac
 set showcmd
