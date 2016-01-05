@@ -24,15 +24,16 @@ ignorekeys clear
 " toodledo
 ignorekeys add https?://www.toodledo.com/ -except=<C-n>,<C-p>,<C-e>,<C-y>
 " googleカレンダー
-ignorekeys add https?://www.google.com/calendar/ -except=<C-n>,<C-p>
+ignorekeys add https?://calendar.google.com/calendar/ -except=<C-n>,<C-p>
+"ignorekeys add https?://www.google.com/calendar/ -except=<C-n>,<C-p>
 " Gmail
 ignorekeys add https?://mail.google.com/mail/ -except=<C-n>,<C-p>
+" Gmail (inbox)
+ignorekeys add https?://inbox.google.com/ -except=<C-n>,<C-p>
 " feedly
 ignorekeys add https?://feedly.com/ -except=<C-n>,<C-p>
 " todoist
 ignorekeys add https?://ja.todoist.com/ -except=<C-n>,<C-p>
-" Gmail (inbox)
-ignorekeys add https?://inbox.google.com/ -except=<C-n>,<C-p>
 
 
-set editor="C:\tools\gvim\vim74-kaoriya-win32-20150301\vim74-kaoriya-win32\gvim.exe -f"
+" set editor="C:\tools\gvim\vim74-kaoriya-win32-20150301\vim74-kaoriya-win32\gvim.exe -f"
