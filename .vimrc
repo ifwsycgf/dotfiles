@@ -162,7 +162,7 @@ set ttyfast
 "set nobackup
 "set noswapfile
 "バックアップファイルのディレクトリを指定する
-set backupdir=$HOME/.vim/vimbackup
+set backupdir=$HOME/.vim/vimbackup/
 "スワップファイル用のディレクトリを指定する
 set directory=$HOME/.vim/vimbackup/
 
