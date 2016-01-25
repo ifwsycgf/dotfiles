@@ -585,3 +585,6 @@ vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z^V"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
+
+" NERDTree を Ctrl+eでトグルする
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
