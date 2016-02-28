@@ -188,6 +188,9 @@ set number
 let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
   colorscheme molokai
+"  set background=dark
+"  set background=light
+"  colorscheme solarized
 endif
 
 set mousemodel=popup
@@ -392,7 +395,7 @@ nnoremap <leader>ss :SaveSession
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 
-"" Tabs
+" Tabs
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
@@ -585,3 +588,6 @@ vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z^V"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
+
+" NTRDTree を Ctrl+eでトグルする
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
