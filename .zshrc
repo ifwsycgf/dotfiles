@@ -1,3 +1,5 @@
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 export EDITOR=vim
 #emacs keybind
 #bindkey -e
