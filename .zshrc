@@ -17,6 +17,7 @@ setopt nolistbeep
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt nobeep
+setopt nolistbeep
 setopt multios
 #setopt no_check_jobs
 
