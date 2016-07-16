@@ -23,12 +23,6 @@ if !filereadable(neobundle_readme)
 
   " Run shell script if exist on custom select language
 
-
-
-
-
-
-
 endif
 
 " Required:
@@ -83,8 +77,8 @@ NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/Wombat'
-NeoBundle 'tomasr/molokai'
 NeoBundle 'vim-scripts/rdark'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 
 "" Vim-Bootstrap Updater
@@ -197,7 +191,11 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
-  colorscheme molokai
+"  colorscheme molokai
+"  set background=light
+"  set background=dark
+"  colorscheme solarized
+  colorscheme hybrid
 endif
 
 set mousemodel=popup
@@ -229,7 +227,7 @@ endif
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
-set scrolloff=3
+set scrolloff=5
 
 "" Map cursor for insert mode
 if &term =~ "xterm\\|rxvt"
@@ -598,3 +596,31 @@ vnoremap ' "zdi'<C-R>z'<ESC>
 
 " NERDTree を Ctrl+eでトグルする
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" ブックマークを最初から表示
+let g:NERDTreeShowBookmarks=1
+
+" ファイル指定で開かれた場合はNERDTreeは表示しない
+if !argc()
+    autocmd vimenter * NERDTree|normal gg3j
+endif
+
+"------------------------------------------------
+"vimdiff をDiffにマッピング
+"------------------------------------------------
+function! s:vimdiff_in_newtab(...)
+  if a:0 == 1
+    tabedit %:p
+    exec 'rightbelow vertical diffsplit ' . a:1
+  else
+    exec 'tabedit ' . a:1
+    for l:file in a:000[1 :]
+      exec 'rightbelow vertical diffsplit ' . l:file
+    endfor
+  endif
+endfunction
+command! -bar -nargs=+ -complete=file Diff  call s:vimdiff_in_newtab(<f-args>)
+
+"------------------------------------------------
+"ファイル新規作成時のテンプレート
+"------------------------------------------------
+" autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
