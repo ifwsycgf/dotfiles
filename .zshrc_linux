@@ -23,6 +23,7 @@ autoload -U compinit; compinit
 zstyle ':completion:*' list-colors ''
 
 alias ls="ls -FA --color=auto"
+alias grep="grep --color=auto"
 alias rm="rm -i"
 # alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi=vim

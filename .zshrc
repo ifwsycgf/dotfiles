@@ -27,6 +27,7 @@ zstyle ':completion:*' list-colors ''
 
 
 alias ls="ls -GFA"
+alias grep="grep --color=auto"
 alias rm="rm -i"
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi=vim
