@@ -621,6 +621,11 @@ endfunction
 command! -bar -nargs=+ -complete=file Diff  call s:vimdiff_in_newtab(<f-args>)
 
 "------------------------------------------------
+"vimgrepの結果を新しいウィンドウで表示する
+"------------------------------------------------
+autocmd QuickFixCmdPost *grep* cwindow
+
+"------------------------------------------------
 "ファイル新規作成時のテンプレート
 "------------------------------------------------
 " autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
