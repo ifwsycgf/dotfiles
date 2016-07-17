@@ -93,6 +93,8 @@ if v:version >= 704
 endif
 
 "" Custom bundles
+NeoBundle 'Rykka/clickable.vim'       " sphinx の依存プラグイン
+NeoBundle 'Rykka/riv.vim'
 
 "" Python Bundle
 NeoBundle "davidhalter/jedi-vim"
