@@ -22,7 +22,13 @@ if !filereadable(neobundle_readme)
   let g:not_finsh_neobundle = "yes"
 
   " Run shell script if exist on custom select language
-
+  
+  
+  
+  
+  
+  
+  
 endif
 
 " Required:
@@ -35,8 +41,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "*****************************************************************************
 "" NeoBundle install packages
 "*****************************************************************************
-"neocomplcache for auto completing
-NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
@@ -70,17 +74,6 @@ NeoBundle 'honza/vim-snippets'
 
 "" Color
 NeoBundle 'tomasr/molokai'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'vim-scripts/twilight'
-NeoBundle 'jonathanfilip/vim-lucius'
-NeoBundle 'jpo/vim-railscasts-theme'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'vim-scripts/Wombat'
-NeoBundle 'vim-scripts/rdark'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
-NeoBundle 'jdkanani/vim-material-theme'
-
 
 "" Vim-Bootstrap Updater
 NeoBundle 'sherzberg/vim-bootstrap-updater'
@@ -94,11 +87,6 @@ if v:version >= 704
 endif
 
 "" Custom bundles
-" vim-mql4
-NeoBundle "vobornik/vim-mql4"
-set runtimepath+=expand('~/.vim/vim-mql4')
-NeoBundle 'Rykka/clickable.vim'       " sphinx の依存プラグイン
-NeoBundle 'Rykka/riv.vim'
 
 "" Python Bundle
 NeoBundle "davidhalter/jedi-vim"
@@ -146,11 +134,10 @@ set fileencodings=utf-8
 set backspace=indent,eol,start
 
 "" Tabs. May be overriten by autocmd rules
-set tabstop=3
-set autoindent
+set tabstop=4
+set softtabstop=0
+set shiftwidth=4
 set expandtab
-set shiftwidth=3
-" set softtabstop=3
 
 "" Map leader to ,
 let mapleader=','
@@ -175,9 +162,7 @@ set ttyfast
 "バックアップファイルのディレクトリを指定する
 set backupdir=$HOME/.vim/vimbackup
 "スワップファイル用のディレクトリを指定する
-set directory=$HOME/.vim/vimbackup
-"undoファイル用のディレクトリを指定する
-set undodir=$HOME/.vim/vimbackup
+set directory=$HOME/.vim/vimbackup/
 
 set fileformats=unix,dos,mac
 set showcmd
@@ -198,15 +183,7 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
-"  colorscheme molokai
-  set background=dark
-"  set background=light
-"  colorscheme solarized
-  colorscheme Tomorrow-Night
-"  set background=light
-"  set background=dark
-"  colorscheme solarized
-"  colorscheme hybrid
+  colorscheme molokai
 endif
 
 set mousemodel=popup
@@ -217,7 +194,7 @@ set gfn=Monospace\ 10
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h16
+    set guifont=Menlo:h12
     set transparency=7
   endif
 else
@@ -238,7 +215,7 @@ endif
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
-set scrolloff=5
+set scrolloff=3
 
 "" Map cursor for insert mode
 if &term =~ "xterm\\|rxvt"
@@ -411,7 +388,7 @@ nnoremap <leader>ss :SaveSession
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 
-" Tabs
+"" Tabs
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
@@ -545,46 +522,9 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-
-"*****************************************************************************
-"" neocomplete Settings
-"*****************************************************************************
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-" Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : ''
-    \ }
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
 "-------------------------------------------------
 " 新しい行のインデントを現在行と同じにする
-" set autoindent
+set autoindent
 " 閉括弧が入力された時、対応する括弧を強調する
 set showmatch
 " 新しい行を作った時に高度な自動インデントを行う
@@ -602,42 +542,5 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 vnoremap { "zdi{<C-R>z}<ESC>
 vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
-vnoremap " "zdi"<C-R>z"<ESC>
+vnoremap " "zdi"<C-R>z^V"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
-
-" NERDTree を Ctrl+eでトグルする
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-" ブックマークを最初から表示
-let g:NERDTreeShowBookmarks=1
-
-" ファイル指定で開かれた場合はNERDTreeは表示しない
-if !argc()
-    autocmd vimenter * NERDTree|normal gg3j
-endif
-
-"------------------------------------------------
-"vimdiff をDiffにマッピング
-"------------------------------------------------
-function! s:vimdiff_in_newtab(...)
-  if a:0 == 1
-    tabedit %:p
-    exec 'rightbelow vertical diffsplit ' . a:1
-  else
-    exec 'tabedit ' . a:1
-    for l:file in a:000[1 :]
-      exec 'rightbelow vertical diffsplit ' . l:file
-    endfor
-  endif
-endfunction
-command! -bar -nargs=+ -complete=file Diff  call s:vimdiff_in_newtab(<f-args>)
-
-"------------------------------------------------
-"vimgrepの結果を新しいウィンドウで表示する
-"------------------------------------------------
-autocmd QuickFixCmdPost *grep* cwindow
-
-"------------------------------------------------
-"ファイル新規作成時のテンプレート
-"------------------------------------------------
-" autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
->>>>>>> 31b7dd902d79d18ad59eef4ad4290bf4f13d4f16

@@ -1,4 +1,3 @@
-export PATH="${PATH}:/usr/local/bin"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export EDITOR=vim
@@ -18,6 +17,7 @@ setopt nolistbeep
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt nobeep
+setopt nolistbeep
 setopt multios
 #setopt no_check_jobs
 
@@ -25,7 +25,9 @@ autoload -U compinit; compinit
 
 zstyle ':completion:*' list-colors ''
 
+
 alias ls="ls -GFA"
+alias grep="grep --color=auto"
 alias rm="rm -i"
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi=vim
@@ -46,3 +48,29 @@ function cd() { builtin cd $@ && ls; }
 
 # added by Miniconda3 4.3.11 installer
 export PATH="/Users/ryohmori/conda/bin:$PATH"
+PATH=/usr/local/bin:${PATH}
+
+# ---------------------------------------------
+# history setting
+# ---------------------------------------------
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_no_store
+setopt share_history
+setopt EXTENDED_HISTORY
+
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=100000
+
+function history-all { history -E 1  }
+
+# ---------------------------------------------

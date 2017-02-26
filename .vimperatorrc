@@ -29,13 +29,12 @@ ignorekeys add https?://calendar.google.com/calendar/ -except=<C-n>,<C-p>
 " Gmail
 ignorekeys add https?://mail.google.com/mail/ -except=<C-n>,<C-p>
 " Gmail (inbox)
-ignorekeys add https?://inbox.google.com/ -except=<C-n>,<C-p>
+ignorekeys add https?://inbox.google.com/ -except=<C-n>,<C-p>,<C-e>,<C-y>
 " feedly
 ignorekeys add https?://feedly.com/ -except=<C-n>,<C-p>
 " todoist
 ignorekeys add https?://ja.todoist.com/ -except=<C-n>,<C-p>
 " inoreader
-ignorekeys add http?://www.inoreader.com/ -except=<C-n>,<C-p>,<C-e>,<C-y>
+ignorekeys add https?://www.inoreader.com/ -except=<C-n>,<C-p>,<C-e>,<C-y>
 
-
-" set editor="C:\tools\gvim\vim74-kaoriya-win32-20150301\vim74-kaoriya-win32\gvim.exe -f"
+set editor=vim
