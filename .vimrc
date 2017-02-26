@@ -640,4 +640,3 @@ autocmd QuickFixCmdPost *grep* cwindow
 "ファイル新規作成時のテンプレート
 "------------------------------------------------
 " autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
->>>>>>> 31b7dd902d79d18ad59eef4ad4290bf4f13d4f16
