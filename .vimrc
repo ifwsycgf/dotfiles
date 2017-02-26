@@ -76,6 +76,17 @@ NeoBundle 'honza/vim-snippets'
 
 "" Color
 NeoBundle 'tomasr/molokai'
+NeoBundle 'nonotech/jellybeans.vim'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'vim-scripts/twilight'
+NeoBundle 'janathanfilip/vim-lucius'
+NeoBundle 'jpo/vim-railscasts-thme'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/Wombat'
+NeoBundle 'vim-scripts/rdark'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'jdkanani/vim-material-theme'
+
 
 "" Vim-Bootstrap Updater
 NeoBundle 'sherzberg/vim-bootstrap-updater'
@@ -89,6 +100,9 @@ if v:version >= 704
 endif
 
 "" Custom bundles
+" vim-mql4
+NeoBundle "vobornik/vim-mql4"
+set runtimepath+=expand('~/.vim/vim-mql4')
 
 "" Python Bundle
 NeoBundle "davidhalter/jedi-vim"
@@ -136,10 +150,11 @@ set fileencodings=utf-8
 set backspace=indent,eol,start
 
 "" Tabs. May be overriten by autocmd rules
-set tabstop=4
-set softtabstop=0
-set shiftwidth=4
+set tabstop=3
+set autoindent
 set expandtab
+set shiftwidth=3
+" set softtabstop=3
 
 "" Map leader to ,
 let mapleader=','
@@ -187,10 +202,11 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
-  colorscheme molokai
-"  set background=dark
+"  colorscheme molokai
+  set background=dark
 "  set background=light
 "  colorscheme solarized
+  colorscheme Tomorrow-Night
 endif
 
 set mousemodel=popup
@@ -568,7 +584,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 "-------------------------------------------------
 " 新しい行のインデントを現在行と同じにする
-set autoindent
+" set autoindent
 " 閉括弧が入力された時、対応する括弧を強調する
 set showmatch
 " 新しい行を作った時に高度な自動インデントを行う

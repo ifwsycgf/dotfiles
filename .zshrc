@@ -1,3 +1,6 @@
+export PATH="${PATH}:/usr/local/bin"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 export EDITOR=vim
 #emacs keybind
 #bindkey -e
@@ -40,3 +43,6 @@ alias -s log=view
 #SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 function cd() { builtin cd $@ && ls; }
+
+# added by Miniconda3 4.3.11 installer
+export PATH="/Users/ryohmori/conda/bin:$PATH"
